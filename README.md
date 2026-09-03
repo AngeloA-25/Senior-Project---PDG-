@@ -1,2 +1,2 @@
-# Senior-Project---PDG-
+# Senior-Project PDG 
 Code for our senior project the pdg. 
