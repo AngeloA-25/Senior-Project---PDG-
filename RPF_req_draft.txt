@@ -1,0 +1,43 @@
+Requirements (rough draft 2) for Senior Project
+by Jayven A Aguirre (project idea author)
+> Draft2 : Second draft removes a couple requirements that are not necessary. Adds new requirements from discussed flow chart.
+
+NOTE: There may be some copies, some requirements may refrence the same functionality/block of the design.
+
+Rough system requirements:
+GLOVE (hub)
+> Must be able to connect to at least 5 MCU units at once (mainly through a wireless protocol.
+> Basic Ergonomic Comfort to be considered.
+> The Glove can take small to modest impacts, think knocking your arm or elbow on the table (for numbers lets guess ~4 feet fall height)
+> The Glove CANNOT consume more than 2.2Wh of power.
+> The Glove needs to connect to each MCU unit wirelessly, either onboard wifi unit or extension port.
+> The Glove needs to have at least 1 wireless modem extension for modularity/upgradability (this mainly influences range and MCU Unit slots).
+> The Glove needs to run on 5v of power.
+> The Glove has to run on a SBC due to graphics resources needed to run GUI portion , preferably dark backround with vector/line style boxes and text.
+> The Glove needs a touch screen.
+> The Glove needs to be able "handshake" with new hardware that uses its MCU unit library (Login/build packets).
+> The Glove needs a custom library where new devices can recieve packets detailing menu/packet construction information.
+> The Glove CANNOT be updated to include new hardware, it must be from an "initialization" packet.
+> The Glove needs to have at least 2 wired UART ports for wired communications, it operates like a wireless MCU unit BUT uses a diffrent color to differentiate it.
+> The Glove needs to have water proof electronics and water resistant upholstry.
+> The Glove MUST update the screen at least 10 frames a second (any more is overkill or for low unit set ups).
+> The Glove Must not weigh over 500 grams so it can be considered lightweight.
+> The Glove needs basic GUI operation, each unit is represented with a box within the screen to keep tabs on the device.
+> The Glove needs basic 5V protection (TVS diodes, Soft Start Mosfets, Fuses things like this).
+> Full price for this glove cannot exceed 100$. (Economic requirement, not a marketing requirement as of yet).
+> Should have its own power switch, this power switch simply cuts off the power after the 5V receptical.
+> Should have two 5V plugs, first to be USB-C compatable and to be JST plug compatable (compatability with SI electric ecosystem).
+
+
+MCU UNIT HARWARE (controllable wireless units)
+> Each MCU must have a wireless protocol installed within it.
+> Each MCU must save configuration, password,  and ownership data.
+> Each MCU must have an init packet so the glove can construct its "menu" so it can send/recieve packets like commands or sensor data (using a saved JSON packet).
+> Each base MCU module must not exceed 20$ for base hardware (no actuators or other in/output items like motors or sensors).
+> Each MCU must be wifi-bluetooth compatable.
+> Each MCU must have at least 1 wireless modem port, primarily for customer to upgrade MCU units.
+> The MCU system must be water proofed and resistant to warm climates (around 100 F)
+> Each MCU system must adhere to the ownership system, this is accessed by using the chips flashed via a c code library
+> Each MCU system must have a "basic" system design, which allows customization from third party program.
+> Each MCU must access the same C Code library to customize details of the MCU unit.
+
