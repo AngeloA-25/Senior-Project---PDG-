@@ -1,0 +1,48 @@
+JSON Handshake packet Parser Dictionary VERSION 1 for Senior Project PDG device
+Jayven A Aguirre 9/15/2026
+
+HandShake: init word for the parser
+
+size: size scale of the square as an integer. -> (0.5,1,2)
+
+Title: Name of device. ->  "name of string"
+
+Progress_Bar: percentage of a premade progress bar for recieved data (for now, assume we are only allowed to use one!) (as an integer). -> (25,50,100)   
+
+Release: End of the JSON Init packet, no other logic will be parsed after this! Make sure this is at the end!
+
+---------- Button group (PDG out)
+Button: Creates a button with the given name on GUI. -> "lightswitch"
+
+Address:: uint8_t style descriptor file type the button uses to adress in the system. -> 0x02 as a "GPIO Pin"
+
+Data_Out::: uint8_t value that the button actually sends to the MCU. -> 0x01 as "button pressed"
+-----------
+
+-----------Data display group (PDG in)
+NumberShow: Shows a value in its own sub-box in the gui.
+
+FloatAdd:: Slot Address from the float data packet it will recieve the data to display
+	    the data (as an integer)                                                   -> 1,2,5 ect from 16 float array
+Pack_Add::: Address of the packet that is expecting so it can update GUI (as an uint8_t). -> 0x01 "temperature sensor cluster" as an example.
+-----------------
+
+FORMAT--- For the JSON, the format per : must be in this form so the logic can look through the list and construct accordingly:
+
+First Item (name or frame):DescriptorDetail(layer 1 details)::DescriptiveDetail(layer 2 that requires layer 1).
+
+LAYERED APPROACH Example:
+
+Handshake
+Size
+Title
+///OPTIONAL, PLACE AS MANY AS NEEDED, the box will fill its contents with buttons, bars, and numerical displays here
+Button1 
+Button2
+Progress_Bar
+NumberShow1
+NumberShow2
+//////End of optional
+Release
+
+//JSON PACKED ENDED
