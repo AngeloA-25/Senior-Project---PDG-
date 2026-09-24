@@ -1,0 +1,13 @@
+{
+  "Handshake": "",
+  "SizeofGUI": "",
+  "Title": "",
+  "Options": {
+    "Button1": "Button_function",
+    "Button2": "Button_function2",
+    "NumberData": "Temperature: XX.X"
+  },
+  "Release": {
+    "EndOfPacket": "End"
+  }
+}
