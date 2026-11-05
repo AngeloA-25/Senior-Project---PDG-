@@ -1,0 +1,10 @@
+{
+  "Handshake": "Test",
+  "SizeofGUI": "2",
+  "Title": "Testing title",
+  "Options": {
+    "Button1": "On",
+    "Button2": "Off",
+    "Temperature": "80.5C"
+  }
+}
